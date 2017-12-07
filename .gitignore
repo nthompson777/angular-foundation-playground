@@ -13,7 +13,7 @@ yarn-error.log*
 /out-tsc
 
 # dependencies
-node_modules/
+/node_modules
 jspm_packages/
 
 # Bower dependency directory (https://bower.io/)
@@ -67,3 +67,4 @@ node_modules/.bin/nopt
 
 # Yarn Integrity file
 .yarn-integrity
+node_modules/.bin/nopt
