@@ -1,6 +1,8 @@
-
 // Import Foundation, Custom Styles, and Custom Variables
 // 12.08.17
+
+// Global Variable Overrides and Styles
+@import 'global';
 
 // Import Foundation for Sites v6.4.4-rc1
 @import '~foundation-sites/scss/foundation';
@@ -11,5 +13,5 @@
 // Custom Foundation Settings
 @import 'settings';
 
-// Global variables and styles
-@import 'global';
+// Global Overrides & Added Styles
+@import 'app';

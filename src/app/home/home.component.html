@@ -1,13 +1,13 @@
-<div class="container color-dark">
-  <div class="col">
+<div class="grid-x grid-padding-x">
+  <div class="medium-6 cell">
     <p>Add a bucket list item</p>
   </div>
-  <div class="col">
+  <div class="medium-6 cell">
     <p>Your bucket list ({{ itemCount }})</p>
   </div>
 </div>
-<div class="container color-light" [@goals]="goals.length">
-  <div class="col">
+<div class="grid-x grid-padding-x" [@goals]="goals.length">
+  <div class="medium-6 cell">
     <p class="sm">Use this form below to add a new bucket list goal. What do you want to do?</p>
     <form>
       <!-- Two-way data-binding example -->
@@ -18,7 +18,7 @@
       <input type="submit" class="btn" [value]="btnText" (click)="addItem()">
     </form>
   </div>
-  <div class="col">
+  <div class="medium-6 cell">
     <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
       {{ goal }}  <!-- interpolation referenced from the For loop above so it displays it here --> 
     </p>

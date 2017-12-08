@@ -1,6 +1,4 @@
-// Foundation for Sites by ZURB
-// foundation.zurb.com
-// Licensed under MIT Open Source
+// Global Variable Overrides
 
 // sass-lint:disable force-attribute-nesting, force-pseudo-nesting, no-color-literals, no-qualifying-elements
 
@@ -12,7 +10,7 @@
 
 /// Font size attribute applied to `<html>` and `<body>`. We use 100% by default so the value is inherited from the user's browser settings.
 /// @type Number
-$global-font-size: 100% !default;
+$global-font-size: 150% !default;
 
 /// Global width of your site. Used by the grid to determine row width.
 /// @type Number
