@@ -1,0 +1,15 @@
+
+// Import Foundation, Custom Styles, and Custom Variables
+// 12.08.17
+
+// Import Foundation for Sites v6.4.4-rc1
+@import '~foundation-sites/scss/foundation';
+
+// !!! Make sure to include below @include in future projects if importing all of Foundation !!!
+@include foundation-everything(true);  
+
+// Custom Foundation Settings
+@import 'settings';
+
+// Global variables and styles
+@import 'global';
