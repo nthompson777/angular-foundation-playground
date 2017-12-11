@@ -8,22 +8,31 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts';
+import { SimplechartComponent } from './charts/simplechart.component';
+import data from 'highcharts/modules/data.src';
+import drilldown from 'highcharts/modules/drilldown.src';
 
-
+export function highchartsModules() {
+  // apply Highcharts Modules to this array
+  return [ data, drilldown ];
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    SimplechartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ChartModule
   ],
-  providers: [DataService],
+  providers: [DataService, { provide: HIGHCHARTS_MODULES, useFactory: highchartsModules }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

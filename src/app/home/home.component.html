@@ -1,4 +1,4 @@
-<div class="grid-x grid-padding-x">
+<div class="grid-x grid-margin-x">
   <div class="medium-6 cell">
     <p>Add a bucket list item</p>
   </div>
@@ -15,7 +15,7 @@
       <p>
       <span>{{ goalText }}</span>
       </p>
-      <input type="submit" class="btn" [value]="btnText" (click)="addItem()">
+      <input type="submit" class="button small" [value]="btnText" (click)="addItem()">
     </form>
   </div>
   <div class="medium-6 cell">
@@ -25,8 +25,24 @@
   </div>
 </div>
 
-<button class="button" data-open="myModal">Add Action</button>                                                
-<div class="large reveal" id="myModal" data-reveal>                                                           
-  <h1>My Modal Title</h1>                                                                                            
+<div class="grid-x grid-padding-x">
+  <div class="medium-6 cell">
+    <button class="button tertiary" data-open="modalTest">Trigger Modal</button>
+  </div><!-- /cell -->
+</div><!-- /grid -->
+
+<div class="grid-x grid-padding-x">
+  <div class="medium-6 cell">
+    <div [chart]="chart" style="height: 400px"></div>
+  </div><!-- /cell -->
+</div><!-- /grid -->
+
+
+<!-- Modal -->
+<div class="tiny reveal" id="modalTest" data-reveal data-animate="fade-in fade-out">
+  <h4>My Modal Title</h4>
   <p>This is the body of my modal</p>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div> 

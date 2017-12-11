@@ -1,9 +1,13 @@
-<p>
-  This is what I'm all about. <a href="" (click)="sendMeHome()">Take me back</a>
-</p>
+<div class="grid-x grid-margin-x">
+  <div class="medium-6 cell">
+    <p>
+      This is what I'm all about. <a href="" (click)="sendMeHome()">Take me back</a>
+    </p>
 
-<ul>
-  <li *ngFor="let goal of goals">
-    {{ goal }}
-  </li>
-</ul>
+    <ul>
+      <li *ngFor="let goal of goals">
+        {{ goal }}
+      </li>
+    </ul>
+  </div>
+</div>

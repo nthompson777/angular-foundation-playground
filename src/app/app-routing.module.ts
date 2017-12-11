@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { SimplechartComponent } from './charts/simplechart.component';
 
 const routes: Routes = [
   {
@@ -10,8 +11,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'about/:id',    // the ':id' is what's called a 'Route Parameter'
+    path: 'about',    // path: 'about/:id'  the ':id' is what's called a 'Route Parameter'
     component: AboutComponent
+  },
+  {
+    path: 'charts',
+    component: SimplechartComponent
   }
 ];
 

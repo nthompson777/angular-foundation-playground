@@ -1,11 +1,20 @@
 <div class="grid-container">
   <div class="grid-x grid-padding-x grid-margin-x">
     <div class="small-12 cell">
-      <ul>
-        <li><a routerLink="">Home</a></li>
-        <li><a routerLink="about/48">About</a></li>
-      </ul>
+      <div class="top-bar">
+        <div class="top-bar-left">
+            <a routerLink="">Site Title</a>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><a routerLink="about">About</a></li>
+            <li><a routerLink="charts">Charts</a></li>
+          </ul>
+        </div>
+      </div>
+      
       <router-outlet></router-outlet>
+      
     </div><!-- /cell -->
   </div><!-- /grid-x -->
 </div><!-- /grid-container -->
