@@ -307,6 +307,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular-foundation-6@^0.11.16:
+  version "0.11.16"
+  resolved "https://registry.yarnpkg.com/angular-foundation-6/-/angular-foundation-6-0.11.16.tgz#babba65eeb47ecb4f32bdc073f0acf189e5091ed"
+
 angular-highcharts@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/angular-highcharts/-/angular-highcharts-5.2.0.tgz#bf615afd9316acc86053131fc678308db65ecf3f"

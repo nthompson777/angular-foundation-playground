@@ -53,7 +53,6 @@ export class SimplechartComponent implements OnInit {
     },
     series: [{
         name: 'Brands',
-        colorByPoint: true,
         data: [{
             name: 'IE',
             y: 56.33,

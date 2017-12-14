@@ -1,24 +1,27 @@
 <div class="grid-x grid-margin-x">
-  <div class="medium-6 cell">
-    <p>Add a bucket list item</p>
-  </div>
-  <div class="medium-6 cell">
-    <p>Your bucket list ({{ itemCount }})</p>
+  <div class="small-12 cell">
+    <h2>Bucket List </h2> 
   </div>
 </div>
 <div class="grid-x grid-padding-x" [@goals]="goals.length">
   <div class="medium-6 cell">
+    <h4>Add a bucket list item</h4>
     <p class="sm">Use this form below to add a new bucket list goal. What do you want to do?</p>
-    <form>
+    <form data-abide novalidate>
+      <label>
+        Bucket List Item
       <!-- Two-way data-binding example -->
-      <input type="text" class="txt" name="item" placeholder="Life goal..." [(ngModel)]="goalText">
+      <input type="text" id="exampleTextInput" class="txt" name="item" required pattern="text" placeholder="Life goal..." [(ngModel)]="goalText" />
+      <span class="form-error" data-form-error-for="exampleTextInput">This is required.</span>
       <p>
-      <span>{{ goalText }}</span>
+      <!-- <span>{{ goalText }}</span> -->
       </p>
-      <input type="submit" class="button small" [value]="btnText" (click)="addItem()">
+      </label>
+      <input type="submit" class="button small" [value]="btnText" (click)="addItem()" />
     </form>
   </div>
   <div class="medium-6 cell">
+    <h4>Your bucket list ({{ itemCount }})</h4>
     <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
       {{ goal }}  <!-- interpolation referenced from the For loop above so it displays it here --> 
     </p>
@@ -37,6 +40,40 @@
   </div><!-- /cell -->
 </div><!-- /grid -->
 
+<div class="grid-x grid-padding-x">
+  <div class="small-9 cell">
+    <table class="stack">
+      <thead>
+        <tr>
+          <th width="300">Table Header</th>
+          <th>Table Header</th>
+          <th width="150">Table Header</th>
+          <th width="150">Table Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Content Goes Here</td>
+          <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+          <td>Content Goes Here</td>
+          <td>Content Goes Here</td>
+        </tr>
+        <tr>
+          <td>Content Goes Here</td>
+          <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+          <td>Content Goes Here</td>
+          <td>Content Goes Here</td>
+        </tr>
+        <tr>
+          <td>Content Goes Here</td>
+          <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+          <td>Content Goes Here</td>
+          <td>Content Goes Here</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="tiny reveal" id="modalTest" data-reveal data-animate="fade-in fade-out">

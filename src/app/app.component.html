@@ -1,17 +1,29 @@
-<div class="grid-container">
-  <div class="grid-x grid-padding-x grid-margin-x">
+<div class="grid-container-fluid">
+  <div class="grid-x">
     <div class="small-12 cell">
-      <div class="top-bar">
+      <div class="title-bar show-for-small-only" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+        <div class="title-bar-title">Menu</div>
+      </div>
+      <div class="top-bar" id="responsive-menu">
         <div class="top-bar-left">
-            <a routerLink="">Site Title</a>
+            <a routerLink="" (click)="select(siteTitle)" [ngClass]="{active: isActive(siteTitle)}">{{siteTitle}}</a>
         </div>
         <div class="top-bar-right">
           <ul class="menu">
-            <li><a routerLink="about">About</a></li>
-            <li><a routerLink="charts">Charts</a></li>
+            <li *ngFor="let n of list" (click)="select(n)" [ngClass]="{active: isActive(n)}">
+              <a routerLink="{{n}}">{{n}}</a>
+            </li>
           </ul>
         </div>
       </div>
+    </div><!-- /grid-x -->
+  </div><!-- /grid-container --> 
+</div><!-- /grid-container -->
+
+<div class="grid-container">
+  <div class="grid-x grid-padding-x grid-margin-x">
+    <div class="small-12 cell">    
       
       <router-outlet></router-outlet>
       

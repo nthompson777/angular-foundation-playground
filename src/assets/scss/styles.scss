@@ -11,8 +11,8 @@
 
 // Motion UI Sass Library 
 @import '~motion-ui/src/motion-ui';
-@include motion-ui-transitions;
-@include motion-ui-animations;
+	@include motion-ui-transitions;
+	@include motion-ui-animations;
 
 // Global Overrides & Added Styles
 @import 'app';

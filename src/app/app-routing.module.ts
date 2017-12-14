@@ -11,11 +11,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'about',    // path: 'about/:id'  the ':id' is what's called a 'Route Parameter'
+    path: 'About',    // path: 'about/:id'  the ':id' is what's called a 'Route Parameter'
     component: AboutComponent
   },
   {
-    path: 'charts',
+    path: 'Charts',
     component: SimplechartComponent
   }
 ];
