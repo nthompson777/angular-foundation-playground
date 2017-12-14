@@ -34,9 +34,10 @@
   </div><!-- /cell -->
 </div><!-- /grid -->
 
-<div class="grid-x grid-padding-x">
+<div class="grid-x grid-padding-x grid-padding-y">
   <div class="medium-6 cell">
-    <div [chart]="chart" style="height: 400px"></div>
+    <i class="fas fa-user"></i>
+    <!-- <div [chart]="chart" style="height: 400px"></div> -->
   </div><!-- /cell -->
 </div><!-- /grid -->
 
@@ -76,10 +77,12 @@
 </div>
 
 <!-- Modal -->
-<div class="tiny reveal" id="modalTest" data-reveal data-animate="fade-in fade-out">
-  <h4>My Modal Title</h4>
+<div class="tiny reveal" id="modalTest" data-reveal data-close-on-click="true" data-animation-in="fade-in fast">
+  <h5>My Modal Title</h5>
+  <hr>
   <p>This is the body of my modal</p>
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
+  <button class="button small primary float-right" data-close aria-label="Close modal" type="button">Close</button>
 </div> 

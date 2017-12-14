@@ -15,11 +15,11 @@ section {
 .button.tertiary {
 	color: $white;
 	
-	&:hover {
+	&:hover,
+	&:focus {
 		color: $white;
 	}
 }
-
 
 // Angular Form Validation
 // ------------------------

@@ -2,7 +2,19 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { trigger,state,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 import { DataService } from '../data.service';
 import { SimplechartComponent } from '../charts/simplechart.component';
-declare var $:any
+import fontawesome from '@fortawesome/fontawesome';
+import { faUser } from '@fortawesome/fontawesome-free-solid';
+import { faCircle } from '@fortawesome/fontawesome-free-regular';
+import { faFacebook } from '@fortawesome/fontawesome-free-brands';
+
+fontawesome.icon(faUser)
+fontawesome.icon(faCircle)
+fontawesome.icon(faFacebook)
+
+fontawesome.dom.i2svg()
+
+declare var $:any  // Used for Foundation jQuery Plugins
+
 
 @Component({
   selector: 'app-home',

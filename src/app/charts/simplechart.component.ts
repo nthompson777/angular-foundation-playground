@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 import * as Highcharts from 'highcharts';
 
@@ -7,6 +7,9 @@ import * as Highcharts from 'highcharts';
   templateUrl: './simplechart.component.html',
   styleUrls: ['./simplechart.component.scss']
 })
+
+@Injectable()
+
 export class SimplechartComponent implements OnInit {
   chart = new Chart({
     title: {

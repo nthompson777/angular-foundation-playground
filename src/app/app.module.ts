@@ -13,6 +13,7 @@ import { SimplechartComponent } from './charts/simplechart.component';
 import data from 'highcharts/modules/data.src';
 import drilldown from 'highcharts/modules/drilldown.src';
 
+
 export function highchartsModules() {
   // apply Highcharts Modules to this array
   return [ data, drilldown ];
