@@ -14,7 +14,7 @@ export class AppComponent {
 
   // Main Nav Links Array
   constructor() {
-    this.list = ['About','Charts']; 
+    this.list = ['About','Charts', 'Grid']; 
   }
   select(item) {
     this.selected = item; 

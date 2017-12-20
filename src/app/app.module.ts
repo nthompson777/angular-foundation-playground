@@ -12,6 +12,10 @@ import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts';
 import { SimplechartComponent } from './charts/simplechart.component';
 import data from 'highcharts/modules/data.src';
 import drilldown from 'highcharts/modules/drilldown.src';
+import { HttpClientModule } from "@angular/common/http"; // HttpClient
+import { AgGridModule }  from "ag-grid-angular";  // ag-grid
+import { MyGridApplicationComponent } from './my-grid-application/my-grid-application.component';
+import { RedComponentComponent } from './red-component/red-component.component';
 
 
 export function highchartsModules() {
@@ -24,14 +28,20 @@ export function highchartsModules() {
     AppComponent,
     HomeComponent,
     AboutComponent,
-    SimplechartComponent
+    SimplechartComponent,
+    MyGridApplicationComponent,
+    RedComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    ChartModule
+    ChartModule,
+    HttpClientModule,
+    AgGridModule.withComponents(
+      [RedComponentComponent]
+    )
   ],
   providers: [DataService, { provide: HIGHCHARTS_MODULES, useFactory: highchartsModules }],
   bootstrap: [AppComponent]

@@ -1,17 +1,17 @@
 <div class="grid-x grid-margin-x">
   <div class="small-12 cell">
-    <h2>Bucket List </h2> 
+    <h2>Item List </h2> 
   </div>
 </div>
 <div class="grid-x grid-padding-x" [@goals]="goals.length">
   <div class="medium-6 cell">
-    <h4>Add a bucket list item</h4>
+    <h4>Add an Item to Your List</h4>
     <p class="sm">Use this form below to add a new bucket list goal. What do you want to do?</p>
     <form data-abide novalidate>
       <label>
-        Bucket List Item
+        List Item
       <!-- Two-way data-binding example -->
-      <input type="text" id="exampleTextInput" class="txt" name="item" required pattern="text" placeholder="Life goal..." [(ngModel)]="goalText" />
+      <input type="text" id="exampleTextInput" class="txt" name="item" required pattern="text" placeholder="Your List Item" [(ngModel)]="goalText" />
       <span class="form-error" data-form-error-for="exampleTextInput">This is required.</span>
       <p>
       <!-- <span>{{ goalText }}</span> -->
@@ -21,7 +21,7 @@
     </form>
   </div>
   <div class="medium-6 cell">
-    <h4>Your bucket list ({{ itemCount }})</h4>
+    <h4>Your Item List ({{ itemCount }})</h4>
     <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
       {{ goal }}  <!-- interpolation referenced from the For loop above so it displays it here --> 
     </p>
@@ -36,7 +36,7 @@
 
 <div class="grid-x grid-padding-x grid-padding-y">
   <div class="medium-6 cell">
-    <i class="fas fa-user"></i>
+    <div style="font-size:3em; color:Tomato"><i class="fas fa-user"></i></div>
     <!-- <div [chart]="chart" style="height: 400px"></div> -->
   </div><!-- /cell -->
 </div><!-- /grid -->

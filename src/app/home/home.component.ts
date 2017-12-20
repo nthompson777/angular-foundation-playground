@@ -3,7 +3,7 @@ import { trigger,state,style,transition,animate,keyframes,query,stagger } from '
 import { DataService } from '../data.service';
 import { SimplechartComponent } from '../charts/simplechart.component';
 import fontawesome from '@fortawesome/fontawesome';
-import { faUser } from '@fortawesome/fontawesome-free-solid';
+import faUser from '@fortawesome/fontawesome-free-solid/faUser';
 import { faCircle } from '@fortawesome/fontawesome-free-regular';
 import { faFacebook } from '@fortawesome/fontawesome-free-brands';
 

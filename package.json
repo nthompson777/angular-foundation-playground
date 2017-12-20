@@ -26,6 +26,8 @@
     "@fortawesome/fontawesome-free-regular": "^5.0.1",
     "@fortawesome/fontawesome-free-solid": "^5.0.1",
     "@types/highcharts": "^5.0.12",
+    "ag-grid": "^15.0.0",
+    "ag-grid-angular": "^15.0.0",
     "core-js": "^2.4.1",
     "highcharts": "^6.0.3",
     "rxjs": "^5.5.2",

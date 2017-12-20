@@ -280,6 +280,14 @@ after@0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
 
+ag-grid-angular@^15.0.0:
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-angular/-/ag-grid-angular-15.0.0.tgz#35d04e7c55ff5c889af0a46cce65e0500a08a1c4"
+
+ag-grid@^15.0.0:
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid/-/ag-grid-15.0.0.tgz#73048d812a43547494d43dc7f5cba533463fcc3e"
+
 agent-base@2:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-2.1.1.tgz#d6de10d5af6132d5bd692427d46fc538539094c7"

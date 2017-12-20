@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { SimplechartComponent } from './charts/simplechart.component';
+import { MyGridApplicationComponent } from './my-grid-application/my-grid-application.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'Charts',
     component: SimplechartComponent
+  },
+  {
+    path: 'Grid',
+    component: MyGridApplicationComponent
   }
 ];
 

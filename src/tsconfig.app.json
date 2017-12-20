@@ -1,10 +1,16 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "sourceMap": true,
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
     "module": "es2015",
-    "types": []
+    "types": [],
+    "paths": {
+      "ag-grid/*": [
+        "../node_modules/ag-grid/*"
+      ]
+    }
   },
   "exclude": [
     "test.ts",
