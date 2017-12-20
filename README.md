@@ -14,9 +14,11 @@ Run `json-server http://jsonplaceholder.typicode.com/db` in separate CLI window.
 
 Clone this repo in dev folder and cd to it: `git clone https://github.com/nthompson777/angular-foundation-playground cd angular-foundation-playground`
 
+Install dependencies via Yarn: `yarn`.
+
 ## Development server
 
-Run `ng serve`, `yarn start` or `npm start` for a dev server. Navigate to (http://localhost:4200/). The app will automatically reload if you change any of the source files.
+Run `npm start` to start or `ng serve` for a dev server. Navigate to (http://localhost:4200/). The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
