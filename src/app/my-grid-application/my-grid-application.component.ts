@@ -18,47 +18,31 @@ export class MyGridApplicationComponent implements OnInit {
     constructor(private http: HttpClient) {
       this.columnDefs = [
         {
-          headerName: "Athlete",
-          field: "athlete",
-          minWidth: 150
+          headerName: "ID",
+          field: "id",
+          minWidth: 50
         },
         {
-          headerName: "Age",
-          field: "age",
+          headerName: "Name",
+          field: "name",
           minWidth: 90
         },
         {
-          headerName: "Country",
-          field: "country"
+          headerName: "Username",
+          field: "username"
         },
         {
-          headerName: "Year",
-          field: "year"
+          headerName: "Email",
+          field: "email"
         },
         {
-          headerName: "Date",
-          field: "date"
+          headerName: "Phone #",
+          field: "phone"
         },
         {
-          headerName: "Sport",
-          field: "sport"
+          headerName: "Website",
+          field: "website"
         },
-        {
-          headerName: "Gold",
-          field: "gold"
-        },
-        {
-          headerName: "Silver",
-          field: "silver"
-        },
-        {
-          headerName: "Bronze",
-          field: "bronze"
-        },
-        {
-          headerName: "Total",
-          field: "total"
-        }
       ];
     }
   
@@ -66,7 +50,7 @@ export class MyGridApplicationComponent implements OnInit {
       this.gridApi = params.api;
       this.gridColumnApi = params.columnApi;
   
-      this.http.get("http://localhost:3000/athletes").subscribe(data => {
+      this.http.get("http://localhost:3000/users").subscribe(data => {
         params.api.setRowData(data);
       });
   

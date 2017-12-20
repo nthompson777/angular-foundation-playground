@@ -2,9 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
+## Install Dependencies
+
+Install Yarn globally via package: (https://yarnpkg.com/en/).
+
+Install Angular CLI:  `yarn global add @angular/cli`
+
+Install json-server globally via `yarn global add json-server`: [json-server](https://github.com/typicode/json-server)
+
+Run `json-server http://jsonplaceholder.typicode.com/db` in separate CLI window. After running, check at (http://localhost:3000/users) in browser window for sample user data.
+
+Clone this repo in dev folder and cd to it: `git clone https://github.com/nthompson777/angular-foundation-playground cd angular-foundation-playground`
+
 ## Development server
 
-Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve`, `yarn start` or `npm start` for a dev server. Navigate to (http://localhost:4200/). The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
