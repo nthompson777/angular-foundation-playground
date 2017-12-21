@@ -14,6 +14,8 @@ export class MyGridApplicationComponent implements OnInit {
     private gridColumnApi;
   
     public columnDefs;
+    public rowData;
+    public getRowHeight;
   
     constructor(private http: HttpClient) {
       this.columnDefs = [
