@@ -16,7 +16,8 @@ import { HttpClientModule } from "@angular/common/http"; // HttpClient
 import { AgGridModule }  from "ag-grid-angular";  // ag-grid
 import { MyGridApplicationComponent } from './my-grid-application/my-grid-application.component';
 import { RedComponentComponent } from './red-component/red-component.component';
-
+import { FaIconComponent } from './fa-icon/fa-icon.component';
+import { FaModule } from './fa/fa.module';
 
 export function highchartsModules() {
   // apply Highcharts Modules to this array
@@ -39,6 +40,7 @@ export function highchartsModules() {
     BrowserAnimationsModule,
     ChartModule,
     HttpClientModule,
+    FaModule,  // Font Awesome 5 Beta Test Version (this was from FortAwesome unfinished Ng Version repo)
     AgGridModule.withComponents(
       [RedComponentComponent]
     )

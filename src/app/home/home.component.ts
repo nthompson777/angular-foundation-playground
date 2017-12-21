@@ -2,16 +2,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { trigger,state,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 import { DataService } from '../data.service';
 import { SimplechartComponent } from '../charts/simplechart.component';
+import { faSync } from '@fortawesome/fontawesome-free-solid';
+import { faUser, faSquare, faAddressBook, faCircle } from '@fortawesome/fontawesome-free-regular';
 import fontawesome from '@fortawesome/fontawesome';
-import faUser from '@fortawesome/fontawesome-free-solid/faUser';
-import { faCircle } from '@fortawesome/fontawesome-free-regular';
-import { faFacebook } from '@fortawesome/fontawesome-free-brands';
-
-fontawesome.icon(faUser)
-fontawesome.icon(faCircle)
-fontawesome.icon(faFacebook)
-
-fontawesome.dom.i2svg()
 
 declare var $:any  // Used for Foundation jQuery Plugins
 
@@ -53,7 +46,17 @@ export class HomeComponent implements OnInit {
   goalText: string = '';   // Used in the Two-way data-binding example in home.component.html
   goals = [];  // empty array
 
-  constructor(private _data: DataService) { }
+  // Font Awesome 5 Icons Angular Test
+  faUser = faUser;
+  faSquare = faSquare;
+  faSync = faSync;
+  faAddressBook = faAddressBook;
+  faCircle = faCircle;
+
+  constructor(private _data: DataService) { 
+    fontawesome.library.add(faUser, faSquare, faSync, faAddressBook, faCircle );
+  }
+  
 
   // ngOnInit is a lifecycle hook that is initiated/loaded when the app loads
   ngOnInit() {

@@ -8,10 +8,13 @@
     <h4>Add an Item to Your List</h4>
     <p class="sm">Use this form below to add a new bucket list goal. What do you want to do?</p>
     <form data-abide novalidate>
+      <div data-abide-error class="alert callout" style="display: none;">
+        <p><i class="fi-alert"></i> There are some errors in your form below.</p>
+      </div>
       <label>
         List Item
       <!-- Two-way data-binding example -->
-      <input type="text" id="exampleTextInput" class="txt" name="item" required pattern="text" placeholder="Your List Item" [(ngModel)]="goalText" />
+      <input type="text" id="exampleTextInput" name="item" required pattern="text" placeholder="Your List Item" [(ngModel)]="goalText">
       <span class="form-error" data-form-error-for="exampleTextInput">This is required.</span>
       <p>
       <!-- <span>{{ goalText }}</span> -->
@@ -35,8 +38,19 @@
 </div><!-- /grid -->
 
 <div class="grid-x grid-padding-x grid-padding-y">
-  <div class="medium-6 cell">
+  <div class="small-12 cell">
     <div style="font-size:3em; color:Tomato"><i class="fas fa-user"></i></div>
+
+    <h3>Font Awesome 5 Test w/ Angular - Simple HTML to SVG Auto Conversion</h3>
+
+    <h4>Icon as Object</h4>
+    <h5><fa-icon [icon]=faUser></fa-icon> User name here (Size of SVG inherits the font-size of the parent element)</h5>
+
+    <h4>With Transform</h4>
+    <div><fa-icon [icon]=faAddressBook transform="grow-10"></fa-icon>
+      
+    <h4>Animation (Spin)</h4>
+    <div><fa-icon [icon]=faSync spin></fa-icon></div>
     <!-- <div [chart]="chart" style="height: 400px"></div> -->
   </div><!-- /cell -->
 </div><!-- /grid -->
@@ -77,7 +91,7 @@
 </div>
 
 <!-- Modal -->
-<div class="tiny reveal" id="modalTest" data-reveal data-close-on-click="true" data-animation-in="fade-in fast">
+<div class="tiny reveal" id="modalTest" data-reveal data-close-on-click="true" data-animation-in="slide-in-down" data-animation-out="slide-out-up">
   <h5>My Modal Title</h5>
   <hr>
   <p>This is the body of my modal</p>
