@@ -1,13 +1,34 @@
-<div class="grid-x grid-margin-x">
-  <div class="medium-6 cell">
-    <p>
-      This is what I'm all about. <a href="" (click)="sendMeHome()">Take me back</a>
-    </p>
+<section>
+  <div class="grid-x grid-margin-x">
+    <div class="medium-6 cell">
+      <p>
+        This is what I'm all about. <a href="" (click)="sendMeHome()">Take me back</a>
+      </p>
 
-    <ul>
-      <li *ngFor="let goal of goals">
-        {{ goal }}
-      </li>
-    </ul>
+      <ul>
+        <li *ngFor="let goal of goals">
+          {{ goal }}
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+</section>
+
+<table class="stack">
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of data | async">
+      <td>{{ d.userId }}</td>
+      <td>{{ d.id }}</td>
+      <td>{{ d.title }}</td>
+      <td>{{ d.completed }}</td>
+    </tr>
+  </tbody>
+</table>
