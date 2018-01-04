@@ -13,8 +13,9 @@
     </div>
   </div>
 </section>
-
-<table class="stack">
+<!-- <button class="button primary" type="button" (click)="dataRequest()">JSON Data Request</button> -->
+<pre>{{ data | json }}</pre>
+<!-- <table class="stack">
   <thead>
     <tr>
       <th>User ID</th>
@@ -24,11 +25,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let d of data | async">
+    <tr *ngFor="let d of data | json">
       <td>{{ d.userId }}</td>
       <td>{{ d.id }}</td>
       <td>{{ d.title }}</td>
       <td>{{ d.completed }}</td>
     </tr>
   </tbody>
-</table>
+</table> -->

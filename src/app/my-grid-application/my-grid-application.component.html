@@ -8,12 +8,11 @@
       id="myGrid"
       class="ag-theme-blue"
       [columnDefs]="columnDefs"
-      [debug]="true"
       [enableSorting]="true"
       [enableFilter]="true"
       [enableColResize]="true"
       (gridReady)="onGridReady($event)"
-      ></ag-grid-angular>
+      ></ag-grid-angular>  <!-- [debug]="true" -->
     </div>
   </div>
 </section>
@@ -27,7 +26,6 @@
       id="myGrid02"
       class="ag-theme-blue"
       [columnDefs]="columnDefs_02"
-      [debug]="true"
       [enableSorting]="true"
       [enableFilter]="true"
       [enableColResize]="true"
@@ -37,7 +35,10 @@
   </div>
 </section>
 
-<table class="stack">
+
+
+
+<!-- <table class="stack">
   <thead>
     <tr>
       <th>User ID</th>
@@ -54,11 +55,12 @@
       <td>{{ d.completed }}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 <section>
   <div class="grid-x grid-padding-x grid-margin-y">
     <div class="medium-6 cell">
+      <pre>{{ data | json }}</pre>
       Chart Here
     </div>
   </div>

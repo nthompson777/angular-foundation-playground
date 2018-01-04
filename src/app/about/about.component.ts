@@ -1,33 +1,41 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
-
-import { Observable } from 'rxjs';
-import { ReturnsJsonArrayService } from '../returns-json-array.service';
+import { Http, Response, HttpModule } from '@angular/http';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [ReturnsJsonArrayService]
+  encapsulation: ViewEncapsulation.None
 })
+
 export class AboutComponent implements OnInit {
-  
+
   goals: any;
+  data: any;
+  loading: boolean;
 
-  data: Observable<Array<any>>;
-
-
-  constructor(private route: ActivatedRoute, private router: Router, private _data: DataService, private service: ReturnsJsonArrayService) {
+  constructor(private route: ActivatedRoute, private router: Router, private _data: DataService, private  http: Http) {
     //this.route.params.subscribe(res => console.log(res.id));
-    this.data = service.getPeople();
-    console.log("AppComponent.data:" + this.data);
   }
 
   ngOnInit() {
     this._data.goal.subscribe(res => this.goals = res);
+    this.dataRequest();
+  }
+
+  dataRequest(): void {
+    this.loading = true;
+    this.http.get('http://localhost:3000/posts')
+
+    .subscribe((res: Response) => {
+      this.data = res.json();
+      // console.log(this.data)
+      this.loading = false;
+    });
   }
 
   sendMeHome() {

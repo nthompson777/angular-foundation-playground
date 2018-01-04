@@ -13,6 +13,7 @@ import { SimplechartComponent } from './charts/simplechart.component';
 import data from 'highcharts/modules/data.src';
 import drilldown from 'highcharts/modules/drilldown.src';
 import { HttpClientModule } from "@angular/common/http"; // HttpClient
+import { Http, Response } from '@angular/http';
 import { HttpModule } from '@angular/http';
 import { AgGridModule }  from "ag-grid-angular";  // ag-grid
 import { MyGridApplicationComponent } from './my-grid-application/my-grid-application.component';

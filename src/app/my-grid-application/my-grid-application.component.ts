@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-my-grid-application',
@@ -13,11 +14,9 @@ export class MyGridApplicationComponent {
 
   private columnDefs;
   private columnDefs_02;
+ 
 
-  name:string;
-  data: any;
-
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private _data: DataService) {
     this.columnDefs = [
       {
         headerName: "ID",
@@ -130,7 +129,10 @@ export class MyGridApplicationComponent {
     ];
   }
 
-  
+  ngOnInit() {
+    this._data.dataRequest();
+  }
+
   onGridReady(params) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
