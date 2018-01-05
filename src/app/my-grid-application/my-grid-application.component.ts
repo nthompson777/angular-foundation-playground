@@ -1,20 +1,22 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-my-grid-application',
   templateUrl: './my-grid-application.component.html',
-  styleUrls: ['./my-grid-application.component.scss']
+  styleUrls: ['./my-grid-application.component.scss'],
+  providers: [DataService]
 })
 
-export class MyGridApplicationComponent {
+export class MyGridApplicationComponent implements OnInit {
   private gridApi;
   private gridColumnApi;
 
   private columnDefs;
   private columnDefs_02;
- 
+
+  data: any;
 
   constructor(private http: HttpClient, private _data: DataService) {
     this.columnDefs = [
@@ -131,6 +133,7 @@ export class MyGridApplicationComponent {
 
   ngOnInit() {
     this._data.dataRequest();
+    //this._data.values.subscribe(res => this._data.dataRequest = res);
   }
 
   onGridReady(params) {

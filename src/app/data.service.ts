@@ -11,7 +11,7 @@ export class DataService {
   values: any;
   loading: boolean;
 
-  constructor( private  http: Http ) { }
+  constructor( private http: Http ) { }
 
   changeGoal(goal) {
     this.goals.next(goal);
@@ -26,6 +26,7 @@ export class DataService {
         this.values = res.json();
         console.log(this.values)
         this.loading = false;
+        return this.values;
       }
     );
   }

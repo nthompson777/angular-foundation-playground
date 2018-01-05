@@ -37,31 +37,34 @@
 
 
 
-
-<!-- <table class="stack">
-  <thead>
-    <tr>
-      <th>User ID</th>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Completed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let d of data | async">
-      <td>{{ d.userId }}</td>
-      <td>{{ d.id }}</td>
-      <td>{{ d.title }}</td>
-      <td>{{ d.completed }}</td>
-    </tr>
-  </tbody>
-</table> -->
-
 <section>
   <div class="grid-x grid-padding-x grid-margin-y">
-    <div class="medium-6 cell">
-      <pre>{{ data | json }}</pre>
-      Chart Here
+    <div class="medium-8 cell">
+        <!-- <table class="stack">
+            <thead>
+              <tr>
+                <th>User ID</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Completed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let v of posts">
+                <td>{{ v.posts.userId }}</td>
+                <td>{{ v.posts.id }}</td>
+                <td>{{ v.posts.title }}</td>
+                <td>{{ v.posts.body }}</td>
+              </tr>
+            </tbody>
+          </table> -->
+          <p>{{data}}</p>
+          <p *ngFor="let i of data">
+            {{i.id}}
+          </p>
+      <p>
+        Chart Will Be Here
+      </p>
     </div>
   </div>
 </section>
