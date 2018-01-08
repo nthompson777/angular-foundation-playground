@@ -6,21 +6,65 @@
 <div class="grid-x grid-padding-x" [@goals]="goals.length">
   <div class="medium-6 cell">
     <h4>Add an Item to Your List</h4>
-    <p class="sm">Use this form below to add a new bucket list goal. What do you want to do?</p>
-    <form data-abide novalidate>
-      <div data-abide-error class="alert callout" style="display: none;">
-        <p><i class="fi-alert"></i> There are some errors in your form below.</p>
+    <p>
+      Use this form below to add a new list item.
+    </p>
+    
+    <form id="myform" data-abide novalidate>
+      <div data-abide-error role="alert" class="alert callout" style="display: none;">
+        <p><fa-icon [icon]=faExclamationTriangle></fa-icon> There are some errors in your form below.</p>
       </div>
-      <label>
+      <label for="listitem">
         List Item
-      <!-- Two-way data-binding example -->
-      <input type="text" id="exampleTextInput" name="item" required pattern="text" placeholder="Your List Item" [(ngModel)]="goalText">
-      <span class="form-error" data-form-error-for="exampleTextInput">This is required.</span>
-      <p>
-      <!-- <span>{{ goalText }}</span> -->
-      </p>
+        <!-- Two-way data-binding example -->
+        <input type="text" id="listitem" name="listitem" required pattern="text" placeholder="Your List Item" [(ngModel)]="goalText">
+        <span class="form-error" data-form-error-for="exampleTextInput">This is required.</span>
       </label>
-      <input type="submit" class="button small" [value]="btnText" (click)="addItem()" />
+      <p class="help-text" id="exampleHelpText">
+        Any type of text required for validation.
+      </p>
+
+      <label>
+        Number Required
+        <input type="text" placeholder="1234" aria-describedby="exampleHelpText" required pattern="number">
+        <span class="form-error">
+          Number required.
+        </span>
+      </label>
+      <p class="help-text" id="exampleHelpText">
+        Here's how you use this input field!
+      </p>
+
+      <label>Password Required
+        <input type="password" id="password" placeholder="Your Password Here" aria-describedby="exampleHelpText" required >
+        <span class="form-error">
+          I'm required!
+        </span>
+      </label>
+      <p class="help-text" id="exampleHelpText">
+        Enter a password please.
+      </p>
+
+      <label>Re-enter Password
+        <input type="password" placeholder="Password Re-entered" aria-describedby="exampleHelpText2" required pattern="alpha_numeric" data-equalto="password">
+        <span class="form-error">
+          Your passwords must match. Please re-enter your passwords.
+        </span>
+      </label>
+      <p class="help-text" id="exampleHelpText2">
+        This field is using the `data-equalto="password"` attribute, causing it to match the password field above.
+      </p>
+
+      <fieldset class="fieldset">
+        <legend>Checkboxes Fieldset</legend>
+        <input id="checkbox12" type="checkbox" required><label for="checkbox12">Checkbox 1</label>
+        <input id="checkbox22" type="checkbox"><label for="checkbox22">Checkbox 2</label>
+        <input id="checkbox32" type="checkbox"><label for="checkbox32">Checkbox 3</label>
+      </fieldset>
+
+      <input type="submit" class="button small" [value]="btnText" (click)="addItem()" id="formSubmit" />
+
+
     </form>
   </div>
   <div class="medium-6 cell">
@@ -33,18 +77,21 @@
 
 <div class="grid-x grid-padding-x">
   <div class="medium-6 cell">
-    <button class="button tertiary" data-open="modalTest">Trigger Modal</button>
+    <button class="button primary" data-open="modalTest">Trigger Modal</button>
   </div><!-- /cell -->
 </div><!-- /grid -->
 
 <div class="grid-x grid-padding-x grid-padding-y">
   <div class="small-12 cell">
-    <h3>Font Awesome 5 Test w/ Angular - Simple HTML to SVG Auto Conversion</h3>
+    <h3>Font Awesome 5 Test w/ Angular - HTML to SVG Auto Conversion</h3>
+    <p>
+      <small>Note: Only loads icons that are imported through the TypeScript file and does not import the whole library through SCSS/CSS Font Import. </small><br>
+    </p>
 
-    <h4>Icon as Object</h4>
-    <h5><fa-icon [icon]=faUser></fa-icon> User name here (Size of SVG inherits the font-size of the parent element)</h5>
+    <h4>Icons as Objects</h4>
+    <h5><fa-icon [icon]=faUser></fa-icon> User name here (Size of SVG inherits the font-size of the parent element which is an H5)</h5>
 
-    <h4>With Transform</h4>
+    <h4>With Transform <small>(Grow-10)</small></h4>
     <div><fa-icon [icon]=faAddressBook transform="grow-10"></fa-icon>
       
     <h4>Animation (Spin)</h4>
@@ -52,41 +99,6 @@
     <!-- <div [chart]="chart" style="height: 400px"></div> -->
   </div><!-- /cell -->
 </div><!-- /grid -->
-
-<div class="grid-x grid-padding-x">
-  <div class="small-9 cell">
-    <table class="stack">
-      <thead>
-        <tr>
-          <th width="300">Table Header</th>
-          <th>Table Header</th>
-          <th width="150">Table Header</th>
-          <th width="150">Table Header</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Content Goes Here</td>
-          <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-          <td>Content Goes Here</td>
-          <td>Content Goes Here</td>
-        </tr>
-        <tr>
-          <td>Content Goes Here</td>
-          <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-          <td>Content Goes Here</td>
-          <td>Content Goes Here</td>
-        </tr>
-        <tr>
-          <td>Content Goes Here</td>
-          <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-          <td>Content Goes Here</td>
-          <td>Content Goes Here</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
 <!-- Modal -->
 <div class="tiny reveal" id="modalTest" data-reveal data-close-on-click="true" data-animation-in="slide-in-down" data-animation-out="slide-out-up">

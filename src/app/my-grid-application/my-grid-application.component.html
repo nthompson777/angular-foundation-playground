@@ -1,70 +1,58 @@
-<h4>Ag-Grid Importing json File Using json-server</h4>
-<section>
-  <div class="grid-x grid-padding-x grid-margin-y">
-    <div class="small-12 cell" id="grid-wrapper" style="height: 200px">
-      <ag-grid-angular
-      #agGrid
-      style="width: 100%; height: 100%;"
-      id="myGrid"
-      class="ag-theme-blue"
-      [columnDefs]="columnDefs"
-      [enableSorting]="true"
-      [enableFilter]="true"
-      [enableColResize]="true"
-      (gridReady)="onGridReady($event)"
-      ></ag-grid-angular>  <!-- [debug]="true" -->
-    </div>
-  </div>
-</section>
+<div class="grid-x grid-padding-x grid-margin-y">
+  <div class="large-7 cell" id="grid-wrapper">
+    <h4>Ag-Grid Importing JSON File Using json-server</h4>
+    <section>
+      <div id="grid-wrapper" style="height: 200px">
+        <ag-grid-angular
+        #agGrid
+        style="width: 100%; height: 100%;"
+        id="myGrid"
+        class="ag-theme-blue"
+        [columnDefs]="columnDefs"
+        [enableSorting]="true"
+        [enableFilter]="true"
+        [enableColResize]="true"
+        (gridReady)="onGridReady($event)"
+        ></ag-grid-angular>  <!-- [debug]="true" -->
+      </div>
+    </section>
 
-<section>
-  <div class="grid-x grid-padding-x grid-margin-y">
-    <div class="medium-8 cell" id="grid-wrapper02" style="height: 300px">
-      <ag-grid-angular
-      agGrid
-      style="width: 100%; height: 100%;"
-      id="myGrid02"
-      class="ag-theme-blue"
-      [columnDefs]="columnDefs_02"
-      [enableSorting]="true"
-      [enableFilter]="true"
-      [enableColResize]="true"
-      (gridReady)="onGridReady($event)"
-      ></ag-grid-angular>
-    </div>
-  </div>
-</section>
+    <section>
+      <div id="grid-wrapper02" style="height: 300px">
+        <ag-grid-angular
+        agGrid
+        style="width: 100%; height: 100%;"
+        id="myGrid02"
+        class="ag-theme-blue"
+        [columnDefs]="columnDefs_02"
+        [enableSorting]="true"
+        [enableFilter]="true"
+        [enableColResize]="true"
+        (gridReady)="onGridReady($event)"
+        ></ag-grid-angular>
+      </div>
+    </section>
+  </div><!-- /parent col -->
 
-
-
-<section>
-  <div class="grid-x grid-padding-x grid-margin-y">
-    <div class="medium-8 cell">
-        <!-- <table class="stack">
-            <thead>
-              <tr>
-                <th>User ID</th>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Completed</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let v of posts">
-                <td>{{ v.posts.userId }}</td>
-                <td>{{ v.posts.id }}</td>
-                <td>{{ v.posts.title }}</td>
-                <td>{{ v.posts.body }}</td>
-              </tr>
-            </tbody>
-          </table> -->
-          <p>{{data}}</p>
-          <p *ngFor="let i of data">
-            {{i.id}}
-          </p>
-      <p>
-        Chart Will Be Here
-      </p>
-    </div>
-  </div>
-</section>
+  <div class="large-5 cell">
+    <h4>JSON Data from Data Service w/ For Loop </h4>
+    <table class="stack">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Completed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of _data.data">
+          <td>{{ d.userId }}</td>
+          <td>{{ d.id }}</td>
+          <td>{{ d.title }}</td>
+          <td>{{ d.body }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /col -->
+</div><!-- /row -->

@@ -1,11 +1,13 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Http, Response, HttpModule } from '@angular/http';
 import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-my-grid-application',
   templateUrl: './my-grid-application.component.html',
   styleUrls: ['./my-grid-application.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   providers: [DataService]
 })
 
@@ -17,8 +19,9 @@ export class MyGridApplicationComponent implements OnInit {
   private columnDefs_02;
 
   data: any;
+  //loading: boolean;
 
-  constructor(private http: HttpClient, private _data: DataService) {
+  constructor(private http: HttpClient, private _data: DataService) {   // , private _data: DataService
     this.columnDefs = [
       {
         headerName: "ID",
@@ -133,7 +136,6 @@ export class MyGridApplicationComponent implements OnInit {
 
   ngOnInit() {
     this._data.dataRequest();
-    //this._data.values.subscribe(res => this._data.dataRequest = res);
   }
 
   onGridReady(params) {

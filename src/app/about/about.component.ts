@@ -15,27 +15,14 @@ import { Http, Response, HttpModule } from '@angular/http';
 export class AboutComponent implements OnInit {
 
   goals: any;
-  data: any;
-  loading: boolean;
 
-  constructor(private route: ActivatedRoute, private router: Router, private _data: DataService, private  http: Http) {
+  constructor(private route: ActivatedRoute, private router: Router, private _data: DataService, private  url: Http) {
     //this.route.params.subscribe(res => console.log(res.id));
   }
 
   ngOnInit() {
     this._data.goal.subscribe(res => this.goals = res);
-    this.dataRequest();
-  }
-
-  dataRequest(): void {
-    this.loading = true;
-    this.http.get('http://localhost:3000/posts')
-
-    .subscribe((res: Response) => {
-      this.data = res.json();
-      // console.log(this.data)
-      this.loading = false;
-    });
+    this._data.dataRequest();
   }
 
   sendMeHome() {

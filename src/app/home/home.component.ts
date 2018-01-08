@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { trigger,state,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 import { DataService } from '../data.service';
 import { SimplechartComponent } from '../charts/simplechart.component';
-import { faSync } from '@fortawesome/fontawesome-free-solid';
+import { faSync, faExclamationTriangle } from '@fortawesome/fontawesome-free-solid';
 import { faUser, faSquare, faAddressBook, faCircle } from '@fortawesome/fontawesome-free-regular';
 import fontawesome from '@fortawesome/fontawesome';
 
@@ -52,6 +52,7 @@ export class HomeComponent implements OnInit {
   faSync = faSync;
   faAddressBook = faAddressBook;
   faCircle = faCircle;
+  faExclamationTriangle = faExclamationTriangle;
 
   constructor(private _data: DataService) { 
     fontawesome.library.add(faUser, faSquare, faSync, faAddressBook, faCircle );
@@ -68,9 +69,13 @@ export class HomeComponent implements OnInit {
 
   addItem() {
     this.goals.push(this.goalText);  
-    this.goalText = '';  // Clears out the input after it's submitted 
+    //this.goalText = '';  // Clears out the input after it's submitted 
     this.itemCount = this.goals.length; 
     this._data.changeGoal(this.goals);  // changeGoal imported from data.service.ts
+    // Hide the Error Box Once form is valid
+    $("#formSubmit").on("formvalid.zf.abide", function(ev,frm) {
+      console.log("Form id "+frm.attr('id')+" is valid");
+    }); 
   }
 
   removeItem(i) {

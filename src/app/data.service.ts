@@ -8,10 +8,10 @@ export class DataService {
 
   private goals = new BehaviorSubject<any>(['List Item #1', 'Another list item']);
   goal = this.goals.asObservable();
-  values: any;
+  data: any;
   loading: boolean;
 
-  constructor( private http: Http ) { }
+  constructor( private url: Http ) { }
 
   changeGoal(goal) {
     this.goals.next(goal);
@@ -19,16 +19,12 @@ export class DataService {
 
   dataRequest(): void {
     this.loading = true;
-    this.http.get('http://localhost:3000/posts/1')
+    this.url.get('http://localhost:3000/posts')
 
-    .subscribe(
-      (res: Response) => {
-        this.values = res.json();
-        console.log(this.values)
-        this.loading = false;
-        return this.values;
-      }
-    );
+    .subscribe((res: Response) => {
+      this.data = res.json();
+      //console.log(this.data)
+      this.loading = false;
+    }); 
   }
-
 }
