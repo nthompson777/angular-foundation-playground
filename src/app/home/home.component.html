@@ -1,112 +1,126 @@
-<div class="grid-x grid-margin-x">
-  <div class="small-12 cell">
-    <h2>Item List </h2> 
-  </div>
-</div>
-<div class="grid-x grid-padding-x" [@goals]="goals.length">
-  <div class="medium-6 cell">
-    <h4>Add an Item to Your List</h4>
-    <p>
-      Use this form below to add a new list item.
-    </p>
-    
-    <form id="myform" data-abide novalidate>
-      <div data-abide-error role="alert" class="alert callout" style="display: none;">
-        <p><fa-icon [icon]=faExclamationTriangle></fa-icon> There are some errors in your form below.</p>
-      </div>
-      <label for="listitem">
-        List Item
-        <!-- Two-way data-binding example -->
-        <input type="text" id="listitem" name="listitem" required pattern="text" placeholder="Your List Item" [(ngModel)]="goalText">
-        <span class="form-error" data-form-error-for="exampleTextInput">This is required.</span>
-      </label>
-      <p class="help-text" id="exampleHelpText">
-        Any type of text required for validation.
-      </p>
-
-      <label>
-        Number Required
-        <input type="text" placeholder="1234" aria-describedby="exampleHelpText" required pattern="number">
-        <span class="form-error">
-          Number required.
-        </span>
-      </label>
-      <p class="help-text" id="exampleHelpText">
-        Here's how you use this input field!
-      </p>
-
-      <label>Password Required
-        <input type="password" id="password" placeholder="Your Password Here" aria-describedby="exampleHelpText" required >
-        <span class="form-error">
-          I'm required!
-        </span>
-      </label>
-      <p class="help-text" id="exampleHelpText">
-        Enter a password please.
-      </p>
-
-      <label>Re-enter Password
-        <input type="password" placeholder="Password Re-entered" aria-describedby="exampleHelpText2" required pattern="alpha_numeric" data-equalto="password">
-        <span class="form-error">
-          Your passwords must match. Please re-enter your passwords.
-        </span>
-      </label>
-      <p class="help-text" id="exampleHelpText2">
-        This field is using the `data-equalto="password"` attribute, causing it to match the password field above.
-      </p>
-
-      <fieldset class="fieldset">
-        <legend>Checkboxes Fieldset</legend>
-        <input id="checkbox12" type="checkbox" required><label for="checkbox12">Checkbox 1</label>
-        <input id="checkbox22" type="checkbox"><label for="checkbox22">Checkbox 2</label>
-        <input id="checkbox32" type="checkbox"><label for="checkbox32">Checkbox 3</label>
-      </fieldset>
-
-      <input type="submit" class="button small" [value]="btnText" (click)="addItem()" id="formSubmit" />
-
-
-    </form>
-  </div>
-  <div class="medium-6 cell">
-    <h4>Your Item List ({{ itemCount }})</h4>
-    <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
-      {{ goal }}  <!-- interpolation referenced from the For loop above so it displays it here --> 
-    </p>
-  </div>
+<div class="off-canvas position-right" id="offCanvasRight1" data-off-canvas data-transition="overlap">
+  <pre>{{myForm.value | json}}</pre>
 </div>
 
-<div class="grid-x grid-padding-x">
-  <div class="medium-6 cell">
-    <button class="button primary" data-open="modalTest">Trigger Modal</button>
-  </div><!-- /cell -->
-</div><!-- /grid -->
+<div class="off-canvas-content" data-off-canvas-content>
+  <form #myForm="ngForm">  <!-- Foundation's Abide Form Validation: data-abide novalidate -->
+    <div class="grid-x grid-padding-x" [@goals]="goals.length">
+      <div class="small-12 cell">
+        <h2>Item List </h2>
+        <h4>Add an Item to Your List</h4> 
+      </div><!--/cell -->
 
-<div class="grid-x grid-padding-x grid-padding-y">
-  <div class="small-12 cell">
-    <h3>Font Awesome 5 Test w/ Angular - HTML to SVG Auto Conversion</h3>
-    <p>
-      <small>Note: Only loads icons that are imported through the TypeScript file and does not import the whole library through SCSS/CSS Font Import. </small><br>
-    </p>
+      <div class="medium-4 cell">
+        <p>
+          Use this form below to add a new list item.
+        </p>
+          <div data-abide-error role="alert" class="alert callout" style="display: none;">
+            <p><fa-icon [icon]=faExclamationTriangle></fa-icon> There are some errors in your form below.</p>
+          </div>
+          <label for="listitem">
+            List Item
+            <!-- Two-way data-binding example -->
+            <input type="text" id="listitem" name="listitem" required pattern="text" placeholder="Your List Item" [(ngModel)]="goalText">
+            <span class="form-error" data-form-error-for="exampleTextInput">This is required.</span>
+          </label>
+          <p class="help-text" id="exampleHelpText">
+            Any type of text required for validation.
+          </p>
 
-    <h4>Icons as Objects</h4>
-    <h5><fa-icon [icon]=faUser></fa-icon> User name here (Size of SVG inherits the font-size of the parent element which is an H5)</h5>
+          <div ngModelGroup="phoneNumbers">
+            <label for="numberReq">
+              Phone Number
+              <input type="text" name="numberReq" placeholder="1234" aria-describedby="exampleHelpText" required pattern="number" ngModel>
+              <span class="form-error">
+                Number required.
+              </span>
+            </label>
+            <p class="help-text" id="exampleHelpText">
+              Help text would go here.
+            </p>
+          </div>
+        </div><!--/cell -->
 
-    <h4>With Transform <small>(Grow-10)</small></h4>
-    <div><fa-icon [icon]=faAddressBook transform="grow-10"></fa-icon>
+        <div class="medium-4 cell">
+          <div ngModelGroup="password-group">
+            <p>Password object uses ngModelGroup directive</p>
+            <label for="password">Password Required
+              <input type="password" name="password" id="password" placeholder="Your Password Here" aria-describedby="exampleHelpText" required ngModel>
+              <span class="form-error">
+                I'm required!
+              </span>
+            </label>
+            <p class="help-text" id="exampleHelpText">
+              Enter a password please.
+            </p>
+          
+            <label for="passwordReenter">Re-enter Password
+              <input type="password" name="passwordReenter" placeholder="Password Re-entered" aria-describedby="exampleHelpText2" required pattern="alpha_numeric" data-equalto="password" ngModel>
+              <span class="form-error">
+                Your passwords must match. Please re-enter your passwords.
+              </span>
+            </label>
+            <p class="help-text" id="exampleHelpText2">
+              This field is using the `data-equalto="password"` attribute, causing it to match the password field above.
+            </p>
+          </div>
+        </div><!--/cell -->
+
+        <div class="medium-4 cell">
+          <h4>Your Item List ({{ itemCount }})</h4>
+          <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+            {{ goal }}  <!-- interpolation referenced from the For loop above so it displays it here --> 
+          </p>
+        </div><!--/cell -->
       
-    <h4>Animation (Spin)</h4>
-    <div><fa-icon [icon]=faSync spin></fa-icon></div>
-    <!-- <div [chart]="chart" style="height: 400px"></div> -->
-  </div><!-- /cell -->
-</div><!-- /grid -->
+        <div class="medium-8 cell">
+          <fieldset class="fieldset">
+            <legend>Checkboxes Fieldset</legend>
+            <input id="checkbox12" type="checkbox" name="checkbox12" required ngModel><label for="checkbox12">Checkbox 1</label>
+            <input id="checkbox22" type="checkbox" name="checkbox22" ngModel><label for="checkbox22">Checkbox 2</label>
+            <input id="checkbox32" type="checkbox" name="checkbox32" ngModel><label for="checkbox32">Checkbox 3</label>
+          </fieldset>
+        </div><!-- /cell -->
+        
+      </div><!--/grid row -->
+      <input type="submit" class="button small" [value]="btnText" (click)="addItem()" id="formSubmit" />
+      <button type="button" class="button secondary small" data-open="modalTest">Trigger Modal</button>
+      <button type="button" class="button tertiary small" data-toggle="offCanvasRight1">Open JSON Form Data</button>
+    </form>
 
-<!-- Modal -->
-<div class="tiny reveal" id="modalTest" data-reveal data-close-on-click="true" data-animation-in="slide-in-down" data-animation-out="slide-out-up">
-  <h5>My Modal Title</h5>
-  <hr>
-  <p>This is the body of my modal</p>
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <button class="button small primary float-right" data-close aria-label="Close modal" type="button">Close</button>
-</div> 
+    <div class="grid-x grid-padding-x">
+      <div class="medium-6 cell">
+        
+      </div><!-- /cell -->
+    </div><!-- /grid -->
+
+  <div class="grid-x grid-padding-x grid-padding-y">
+    <div class="small-12 cell">
+      <h3>Font Awesome 5 Test w/ Angular - HTML to SVG Auto Conversion</h3>
+      <p>
+        <small>Note: Only loads icons that are imported through the TypeScript file and does not import the whole library through SCSS/CSS Font Import. </small><br>
+      </p>
+
+      <h4>Icons as Objects</h4>
+      <h5><fa-icon [icon]=faUser></fa-icon> User name here (Size of SVG inherits the font-size of the parent element which is an H5)</h5>
+
+      <h4>With Transform <small>(Grow-10)</small></h4>
+      <fa-icon [icon]=faAddressBook transform="grow-10"></fa-icon>
+        
+      <h4>Animation (Spin)</h4>
+      <fa-icon [icon]=faSync spin></fa-icon>
+      <!-- <div [chart]="chart" style="height: 400px"></div> -->
+    </div><!-- /cell -->
+  </div><!-- /grid -->
+
+  <!-- Modal -->
+  <div class="tiny reveal" id="modalTest" data-reveal data-close-on-click="true" data-animation-in="slide-in-down fast" data-animation-out="slide-out-up fast">
+    <h5>My Modal Title</h5>
+    <hr>
+    <p>This is the body of the modal</p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <button class="button small primary float-right" data-close aria-label="Close modal" type="button">Close</button>
+  </div> 
+</div>

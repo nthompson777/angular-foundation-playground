@@ -5,6 +5,7 @@ import { SimplechartComponent } from '../charts/simplechart.component';
 import { faSync, faExclamationTriangle } from '@fortawesome/fontawesome-free-solid';
 import { faUser, faSquare, faAddressBook, faCircle } from '@fortawesome/fontawesome-free-regular';
 import fontawesome from '@fortawesome/fontawesome';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
 declare var $:any  // Used for Foundation jQuery Plugins
 

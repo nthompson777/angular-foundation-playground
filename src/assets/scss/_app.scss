@@ -21,6 +21,12 @@ section {
 	}
 }
 
+// Header Font Colors
+// -----------------------
+h2, h3 {
+	color: $primary-color;
+}
+
 // Angular Form Validation
 // ------------------------
 /* .ng-invalid {
