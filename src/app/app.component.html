@@ -6,29 +6,30 @@
           <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
           <div class="title-bar-title">Menu</div>
         </div>
-        <div class="top-bar" id="responsive-menu">
+        <header class="top-bar" id="responsive-menu">
           <div class="top-bar-left">
               <a routerLink="" (click)="select(siteTitle)" class="homelink" [ngClass]="{active: isActive(siteTitle)}">{{siteTitle}}</a>
           </div>
-          <div class="top-bar-right">
+          <nav class="top-bar-right">
             <ul class="menu">
               <li *ngFor="let n of list" (click)="select(n)" [ngClass]="{active: isActive(n)}">
                 <a routerLink="{{n}}">{{n}}</a>
               </li>
             </ul>
-          </div>
-        </div>
+          </nav>
+        </header>
       </div><!-- /grid-x -->
     </div><!-- /grid-container --> 
   </div><!-- /grid-container -->
-
-  <div class="grid-container">
+  
+  <main class="grid-container">
     <div class="grid-x grid-padding-x grid-margin-x">
       <div class="small-12 cell">    
-        
         <router-outlet></router-outlet>
-        
       </div><!-- /cell -->
     </div><!-- /grid-x -->
-  </div><!-- /grid-container -->
+  </main><!-- /grid-container -->
+  <footer class="footer">
+    Footer Here
+  </footer>
 </div><!-- /off-canvas-wrapper -->

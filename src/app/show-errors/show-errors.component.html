@@ -1,0 +1,6 @@
+<div data-abide-error role="alert" class="alert callout" style="display: none;">
+  <p><fa-icon [icon]=faExclamationTriangle></fa-icon> There are some errors in your form below.</p>
+  <ul *ngIf="shouldShowErrors()">
+    <li class="form-error" *ngFor="let error of listOfErrors()">{{error}}</li>
+  </ul>
+</div>

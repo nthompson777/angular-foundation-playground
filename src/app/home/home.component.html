@@ -3,7 +3,7 @@
 </div>
 
 <div class="off-canvas-content" data-off-canvas-content>
-  <form #myForm="ngForm">  <!-- Foundation's Abide Form Validation: data-abide novalidate -->
+  <form #myForm="ngForm" novalidate>  <!-- Foundation's Abide Form Validation: data-abide novalidate -->
     <div class="grid-x grid-padding-x" [@goals]="goals.length">
       <div class="small-12 cell">
         <h2>Item List </h2>
@@ -14,13 +14,11 @@
         <p>
           Use this form below to add a new list item.
         </p>
-          <div data-abide-error role="alert" class="alert callout" style="display: none;">
-            <p><fa-icon [icon]=faExclamationTriangle></fa-icon> There are some errors in your form below.</p>
-          </div>
+          <!-- TODO: Placeholder - Error Message will go here -->
           <label for="listitem">
             List Item
             <!-- Two-way data-binding example -->
-            <input type="text" id="listitem" name="listitem" required pattern="text" placeholder="Your List Item" [(ngModel)]="goalText">
+            <input type="text" id="listitem" name="listitem" required pattern="text" placeholder="Your List Item" [(ngModel)]="goalText" required>
             <span class="form-error" data-form-error-for="exampleTextInput">This is required.</span>
           </label>
           <p class="help-text" id="exampleHelpText">
@@ -28,12 +26,10 @@
           </p>
 
           <div ngModelGroup="phoneNumbers">
-            <label for="numberReq">
-              Phone Number
-              <input type="text" name="numberReq" placeholder="1234" aria-describedby="exampleHelpText" required pattern="number" ngModel>
-              <span class="form-error">
-                Number required.
-              </span>
+            <label for="birthYear">
+              Birth Year
+              <input type="text" name="birthYear" #birthYear="ngModel" ngModel required pattern="\\d{4,4}"/>
+              <show-errors [control]="birthYear"></show-errors>
             </label>
             <p class="help-text" id="exampleHelpText">
               Help text would go here.
@@ -45,7 +41,7 @@
           <div ngModelGroup="password-group">
             <p>Password object uses ngModelGroup directive</p>
             <label for="password">Password Required
-              <input type="password" name="password" id="password" placeholder="Your Password Here" aria-describedby="exampleHelpText" required ngModel>
+              <input type="password" name="password" id="password" placeholder="Your Password Here" aria-describedby="exampleHelpText" ngModel required>
               <span class="form-error">
                 I'm required!
               </span>
@@ -55,7 +51,7 @@
             </p>
           
             <label for="passwordReenter">Re-enter Password
-              <input type="password" name="passwordReenter" placeholder="Password Re-entered" aria-describedby="exampleHelpText2" required pattern="alpha_numeric" data-equalto="password" ngModel>
+              <input type="password" name="passwordReenter" placeholder="Password Re-entered" aria-describedby="exampleHelpText2" required pattern="alpha_numeric" data-equalto="password" ngModel required>
               <span class="form-error">
                 Your passwords must match. Please re-enter your passwords.
               </span>

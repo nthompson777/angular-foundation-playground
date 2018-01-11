@@ -20,6 +20,7 @@ import { MyGridApplicationComponent } from './my-grid-application/my-grid-applic
 import { RedComponentComponent } from './red-component/red-component.component';
 import { FaIconComponent } from './fa-icon/fa-icon.component';
 import { FaModule } from './fa/fa.module';
+import { ShowErrorsComponent } from './show-errors/show-errors.component';
 
 export function highchartsModules() {
   // apply Highcharts Modules to this array
@@ -33,7 +34,8 @@ export function highchartsModules() {
     AboutComponent,
     SimplechartComponent,
     MyGridApplicationComponent,
-    RedComponentComponent
+    RedComponentComponent,
+    ShowErrorsComponent
   ],
   imports: [
     BrowserModule,

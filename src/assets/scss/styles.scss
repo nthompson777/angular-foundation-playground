@@ -6,8 +6,8 @@
 
 // Import Foundation for Sites v6.4.4-rc1
 @import '~foundation-sites/scss/foundation';
-// !!! Make sure to include below @include in future projects if importing all of Foundation !!!
-@include foundation-everything(true); 
+	// !!! Make sure to include below @include in future projects if importing all of Foundation !!!
+	@include foundation-everything(true); 
 
 // Motion UI Sass Library 
 @import '~motion-ui/src/motion-ui';

@@ -1,4 +1,13 @@
 // Global Override Styles and Added Styles
+
+footer {
+	background-color: $footer-background;
+	color: $footer-color;
+	text-align: center;
+	padding: 30px 0;
+	margin-top: 30px;
+}
+
 section {
 	margin: 0 0 30px;
 }
@@ -21,17 +30,11 @@ section {
 	}
 }
 
-// Header Font Colors
+// Sub Header Font Colors (for differentiating between other headers)
 // -----------------------
 h2, h3 {
 	color: $primary-color;
 }
-
-// Angular Form Validation
-// ------------------------
-/* .ng-invalid {
-	@include form-error;
-} */
 
 
 // Highcharts Theme
