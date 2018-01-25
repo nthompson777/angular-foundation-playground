@@ -3,7 +3,7 @@
 </div>
 
 <div class="off-canvas-content" data-off-canvas-content>
-  <form #myForm="ngForm" novalidate>  <!-- Foundation's Abide Form Validation: data-abide novalidate -->
+  <form #myForm="ngForm" (ngSubmit)="actionOnSubmit(myForm)" novalidate>  <!-- Foundation's Abide Form Validation: data-abide novalidate -->
     <div class="grid-x grid-padding-x" [@goals]="goals.length">
       <div class="small-12 cell">
         <h2>Item List </h2>
@@ -14,6 +14,7 @@
         <p>
           Use this form below to add a new list item.
         </p>
+        <p>Is "myForm" valid? {{myForm.valid}}</p>
           <!-- TODO: Placeholder - Error Message will go here -->
           <label for="listitem">
             List Item

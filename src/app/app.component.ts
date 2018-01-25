@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'app';
-  siteTitle = 'Site Title Home';
+  siteTitle = 'Site Home';
   name:string;
   list:any;
   selected :any;
@@ -25,7 +25,9 @@ export class AppComponent {
   isActive(item) {
       return this.selected === item;
   };
+
 }
+
 
 /* Sticky Footer: https://github.com/coreysyms/foundationStickyFooter */
 var MutationObserver = (function () {

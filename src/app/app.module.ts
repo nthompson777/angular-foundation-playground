@@ -21,6 +21,7 @@ import { RedComponentComponent } from './red-component/red-component.component';
 import { FaIconComponent } from './fa-icon/fa-icon.component';
 import { FaModule } from './fa/fa.module';
 import { ShowErrorsComponent } from './show-errors/show-errors.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 export function highchartsModules() {
   // apply Highcharts Modules to this array
@@ -52,3 +53,5 @@ export function highchartsModules() {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

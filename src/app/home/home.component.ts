@@ -5,10 +5,10 @@ import { SimplechartComponent } from '../charts/simplechart.component';
 import { faSync, faExclamationTriangle } from '@fortawesome/fontawesome-free-solid';
 import { faUser, faSquare, faAddressBook, faCircle } from '@fortawesome/fontawesome-free-regular';
 import fontawesome from '@fortawesome/fontawesome';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { ShowErrorsComponent } from '../show-errors/show-errors.component';
 
 declare var $:any  // Used for Foundation jQuery Plugins
-
 
 @Component({
   selector: 'app-home',
@@ -84,9 +84,14 @@ export class HomeComponent implements OnInit {
     this.itemCount = this.goals.length;
     this._data.changeGoal(this.goals);  // changeGoal imported from data.service.ts
   }
+
+  /* register (myForm: NgForm) {
+    console.log('Successful registration');
+    console.log(myForm);
+  } */
 }
 
-/* Highcharts.chart('container', {
+/*  Highcharts.chart('chart', {
   title: {
       text: 'Chart reflow is set to true'
   },
@@ -103,4 +108,4 @@ export class HomeComponent implements OnInit {
   series: [{
       data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
   }]
-}); */
+}); */ 
