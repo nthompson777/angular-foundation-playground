@@ -14,7 +14,7 @@ import { DataService } from '../data.service';
 export class MyGridApplicationComponent implements OnInit {
   private gridApi;
   private gridColumnApi;
-
+  private domLayout;
   private columnDefs;
   private columnDefs_02;
 
@@ -132,6 +132,7 @@ export class MyGridApplicationComponent implements OnInit {
         ]
       },
     ];
+    this.domLayout = "autoHeight";
   }
 
   ngOnInit() {

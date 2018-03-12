@@ -1,40 +1,43 @@
 <div class="grid-x grid-padding-x grid-margin-y">
-  <div class="large-7 cell" id="grid-wrapper">
+  <div class="small-12 cell" id="grid-wrapper">
     <h4>Ag-Grid Importing JSON File Using json-server</h4>
     <section>
-      <div id="grid-wrapper" style="height: 200px">
         <ag-grid-angular
         #agGrid
-        style="width: 100%; height: 100%;"
         id="myGrid"
         class="ag-theme-blue"
         [columnDefs]="columnDefs"
         [enableSorting]="true"
         [enableFilter]="true"
         [enableColResize]="true"
+        [domLayout]="domLayout"
         (gridReady)="onGridReady($event)"
         ></ag-grid-angular>  <!-- [debug]="true" -->
-      </div>
+    </section>
+    <section>
+      <p>Key Here</p>
+      Ref:
+      https://www.ag-grid.com/javascript-grid-width-and-height/#animation-with-auto-height
     </section>
 
     <section>
-      <div id="grid-wrapper02" style="height: 300px">
+      <div>
         <ag-grid-angular
         agGrid
-        style="width: 100%; height: 100%;"
         id="myGrid02"
         class="ag-theme-blue"
         [columnDefs]="columnDefs_02"
         [enableSorting]="true"
         [enableFilter]="true"
         [enableColResize]="true"
+        [domLayout]="domLayout"
         (gridReady)="onGridReady($event)"
         ></ag-grid-angular>
       </div>
     </section>
   </div><!-- /parent col -->
 
-  <div class="large-5 cell">
+<!--   <div class="large-5 cell">
     <h4>JSON Data from Data Service w/ For Loop </h4>
     <table class="stack">
       <thead>
@@ -54,5 +57,5 @@
         </tr>
       </tbody>
     </table>
-  </div><!-- /col -->
+  </div> -->
 </div><!-- /row -->
